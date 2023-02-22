@@ -2,7 +2,7 @@ import { Modal, useNotification, Input, Illustration, Button } from "web3uikit"
 import { useState } from "react"
 import { useWeb3Contract } from "react-moralis"
 import { ethers } from "ethers"
-// import Image from "next/image"
+import Image from "next/image"
 
 export interface UpdateListingModalProps {
     isVisible: boolean
@@ -104,11 +104,12 @@ export const UpdateListingModal = ({
                     <div className="flex flex-col items-end gap-2 border-solid border-2 border-gray-400 rounded p-2 w-fit">
                         <div>#{tokenId}</div>
                         {imageURI ? (
-                            <img
+                            <Image
                                 loader={() => imageURI}
                                 src={imageURI}
                                 height="200"
                                 width="200"
+                                unoptimized
                             />
                         ) : (
                             <Illustration height="180px" logo="lazyNft" width="100%" />
