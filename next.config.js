@@ -15,6 +15,15 @@ const images = {
 module.exports = {
   nextConfig,
   images: {
-      unoptimized: true
-  }
+    unoptimized: true
+  },
+  exportPathMap: async function (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      '/': { page: '/' },
+      '/sell-nft': { page: '/sell-nft' },
+    }
+  },
 }
