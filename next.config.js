@@ -6,7 +6,8 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   images: {
-    unoptimized: true
+    loader: 'imgix',
+    path: '/',
   },
   exportPathMap: async function (
     defaultPathMap,
